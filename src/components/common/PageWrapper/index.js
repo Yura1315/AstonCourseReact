@@ -8,9 +8,7 @@ class PageWrapper extends React.Component {
 		return (
 			<div className='layout'>
 				<Header />
-				<div className='content'>
-					<div>{this.props.children}</div>
-				</div>
+				<div className='content'>{this.props.children}</div>
 				<Footer />
 			</div>
 		);
