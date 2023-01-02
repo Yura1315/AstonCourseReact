@@ -8,21 +8,10 @@ class MainContainer extends React.Component {
 			value: '',
 			deleteBtn: false,
 		};
+		this.focusInput = React.createRef();
+		this.handleFocus = this.handleFocus.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSumbit = this.handleSumbit.bind(this);
-	}
-
-	componentDidMount() {
-		console.log('componentDidMount MainContainer');
-	}
-
-	shouldComponentUpdate() {
-		console.log('ShouldComponentUpdate Maincontainer');
-		return true;
-	}
-
-	componentDidUpdate() {
-		console.log('componentDidUpdate MainContainer');
 	}
 
 	handleChange(e) {
@@ -33,10 +22,17 @@ class MainContainer extends React.Component {
 
 	handleSumbit(e) {
 		e.preventDefault();
-		console.log(this.state.value);
+		if (!this.state.value) {
+			console.log('Форма пустая, не отправляем');
+		}
 		this.setState({
 			value: '',
 		});
+	}
+
+	handleFocus(e) {
+		e.preventDefault();
+		this.focusInput.current.focus();
 	}
 
 	render() {
@@ -45,6 +41,8 @@ class MainContainer extends React.Component {
 				value={this.state.value}
 				handleSumbit={this.handleSumbit}
 				handleChange={this.handleChange}
+				handleFocus={this.handleFocus}
+				refInput={this.focusInput}
 			/>
 		);
 	}

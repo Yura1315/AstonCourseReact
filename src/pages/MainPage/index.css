@@ -17,7 +17,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 100%;
+	margin-top: 50px;
 }
 
 .info__wrap {
@@ -33,4 +33,13 @@
 	text-align: center;
 	font-size: 14px;
 	margin-bottom: 50px;
+}
+
+.btn__wrap button:first-child {
+	margin-bottom: 10px;
+}
+
+.list__wrap {
+	margin-top: 70px;
+	margin-bottom: 70px;
 }

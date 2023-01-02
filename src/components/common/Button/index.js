@@ -2,20 +2,18 @@ import React from 'react';
 import './index.css';
 
 class Button extends React.PureComponent {
-	componentDidMount() {
-		console.log('componentDidMount Button');
+	constructor(props) {
+		super(props);
+		this.myRef = React.createRef();
 	}
-
-	componentDidUpdate() {
-		console.log('componentDidUpdate Button');
-	}
-
 	render() {
 		return (
 			<button
+				disabled={this.props.isDisabled}
 				className='button'
-				type='submit'>
-				Отправить
+				type='submit'
+				onClick={this.props.handle}>
+				{this.props.title}
 			</button>
 		);
 	}

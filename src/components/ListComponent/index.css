@@ -1,0 +1,22 @@
+.list {
+	display: flex;
+	flex-direction: column;
+	list-style-type: none;
+	padding-left: 0;
+	margin-top: 15px;
+}
+
+.list__item {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background-color: #f2f2f2;
+	border-radius: 16px;
+	margin-bottom: 10px;
+	padding-left: 25px;
+	cursor: pointer;
+	transition: ease 0.3s;
+}
+
+.list__item:hover {
+	box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
